@@ -1,0 +1,5 @@
+- docker image build -t nginx-app --file ./docker/Dockerfile .
+- docker compose -f docker/docker-compose.yaml up --build
+- docker exec -it docker-nginx-server-1 bash
+- openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout nginx-selfsigned.key -out nginx-selfsigned.crt
+- docker exec docker-nginx-server-1 nginx -s reload
